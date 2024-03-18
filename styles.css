@@ -1,49 +1,134 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   box-sizing: border-box;
+  background-color: #f2f2f2;
 }
 
-.body {
+.container {
   display: flex;
-  align-items: center;
-}
-img {
-  max-width: 670px;
-  height: auto;
-}
-
-form {
-  flex-direction: column;
-  width: 1000px;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-  border: transparent;
-  background-color: grey;
-}
-input {
-  border: 5px #e5e7eb;
-  border-radius: 10px;
-}
-fieldset {
-  flex-wrap: wrap;
-}
-
-button {
-  background-color: #596d48;
-  color: white;
-  border-radius: 10px;
-}
-
-.right-side {
-  width: 50%;
 }
 
 .left-side {
-  width: 40%;
-  height: auto;
+  width: 50%;
+  overflow: hidden;
+  height: 100vh;
+  position: relative;
 }
 
-.heading-text {
-  font-size: 28px;
+.left-side .background {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.right-side {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+p {
+  font-size: 25px;
+  margin: 20px 25px;
+}
+
+.user-details {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.field {
+  position: relative;
+  width: 35%;
+  margin-right: 20px;
+  margin-bottom: 25px;
+}
+
+.user-details input {
+  width: 100%;
+  border: 2px solid #E5E7EB;
+  padding: 5px;
+}
+
+.user-details label {
+  position: absolute;
+  top: -20px; /* Adjust vertical position of the label */
+  left: 0;
+}
+
+fieldset {
+  padding: 20px 25px;
+  box-shadow:  0px 2px 2px rgba(0,0,0,0.1);
+  
+}
+input:focus {
+  box-shadow:  0px 2px 2px rgba(0,0,0,0.1);
+}
+button[type="submit"] {
+  margin: 20px 25px;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: #596D48;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: green;
+}
+
+a {
+  text-decoration: none;
+  color:#596D48;
+} 
+
+h1 {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+
+
+h1::before {
+ content: '';
+ position: absolute;
+ left: 0;
+ bottom: 0;
+ height: 3px;
+ width: 30px;
+ background: #596D48;
+}
+
+.noAccount {
+  margin-left: 25px;
+}
+
+.logo {
+  position:absolute;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: rgba(0, 0, 0, 0.5); /* Adjust the color and opacity for the overlay */
+}
+
+.error {
+  display: none;
+  font-size: 0.8em;
+  text-align: center;
+  margin: 0.2em 0 1em 0;
+  color: #c00;  
+}
+
+.invalid .error {
+  display:block;
+}
+
+.invalid label, .invalid .error {
+  color: #c00;
+  border-color: #c00;
 }
